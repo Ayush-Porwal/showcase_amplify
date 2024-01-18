@@ -1,0 +1,43 @@
+{
+  "api": {
+    "testapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "TestApiHandler"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "TestApiHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_TestApiHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "TestApiHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_TestApiHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "TestApiHandler"
+        }
+      ]
+    }
+  }
+}
